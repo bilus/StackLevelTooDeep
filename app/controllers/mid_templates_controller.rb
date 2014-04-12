@@ -65,6 +65,6 @@ class MidTemplatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mid_template_params
-      params[:mid_template]
+      params[:mid_template].permit(:name)
     end
 end

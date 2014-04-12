@@ -12,6 +12,9 @@ class MidTemplatesController < ApplicationController
   def new
     @mid_template = MidTemplate.new
   end
+  
+  def show
+  end
 
   # GET /mid_templates/1/edit
   def edit
@@ -24,7 +27,7 @@ class MidTemplatesController < ApplicationController
 
     respond_to do |format|
       if @mid_template.save
-        format.html { redirect_to mid_templates_path, notice: 'Mid template was successfully created.' }
+        format.html { redirect_to @mid_template, notice: 'Mid template was successfully created.' }
         format.json { render :show, status: :created, location: @mid_template }
       else
         format.html { render :new }
